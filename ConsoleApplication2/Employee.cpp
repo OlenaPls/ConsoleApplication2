@@ -1,5 +1,5 @@
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Employee.h"
 #include <string>
 #include <iostream>
