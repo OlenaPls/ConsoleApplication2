@@ -4,6 +4,7 @@
 //#include "stdafx.h"
 #include <iostream>
 #include <string>
+#include "GradeBook.h"
 #include "Employee.h"
 #include "Account.h"
 #include "Date.h"
@@ -915,7 +916,7 @@ for (i = 1; i <= e; i++)
 	cout << "*";
 }
 cout << "\n";
-*/
+
 
 			//5.14 ціна продуктів
 int product;
@@ -942,6 +943,15 @@ for (int i = 1; i <= 5; i++)
 	}
 }
 cout << "\nThe profit for the week is " << fixed << setprecision (2) << rez << " $\n";
+*/
+
+			//5.15 GradeBook продовження
+
+
+GradeBook myGradeBook = GradeBook("The programming C++");
+myGradeBook.displayMessage();
+myGradeBook.inputGrades();
+myGradeBook.displayGradeReport();
 
 system("pause");
 	return 0;
