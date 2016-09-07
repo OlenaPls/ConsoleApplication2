@@ -917,6 +917,32 @@ for (i = 1; i <= e; i++)
 cout << "\n";
 */
 
+			//5.14 ціна продуктів
+int product;
+int sales;
+double rez = 0;
+
+
+for (int i = 1; i <= 5; i++)
+{
+	cout << "Enter the number of the product and the sales per day \n";
+	cin >> product >> sales;
+	switch (product)
+	{
+	case 1: rez += 7 * 2.98 * sales;
+		break;
+	case 2: rez += 7 * 4.50 * sales;
+		break;
+	case 3: rez += 7 * 9.98 * sales;
+		break;
+	case 4: rez += 7 * 4.49 * sales;
+		break;
+	case 5: rez += 7 * 6.87 * sales;
+		break;
+	}
+}
+cout << "\nThe profit for the week is " << fixed << setprecision (2) << rez << " $\n";
+
 system("pause");
 	return 0;
 
