@@ -781,6 +781,7 @@ for (int i = 1; i <= 5; i++)
 
 
 
+
 			//5.11 складні відсотки
 
 double a;
@@ -943,7 +944,7 @@ for (int i = 1; i <= 5; i++)
 	}
 }
 cout << "\nThe profit for the week is " << fixed << setprecision (2) << rez << " $\n";
-*/
+
 
 			//5.15 GradeBook продовження
 
@@ -952,6 +953,230 @@ GradeBook myGradeBook = GradeBook("The programming C++");
 myGradeBook.displayMessage();
 myGradeBook.inputGrades();
 myGradeBook.displayGradeReport();
+
+			//5.17
+int i = 1;
+int j = 2;
+int k = 3;
+int m = 2;
+cout << (i == 1) << endl;
+cout << (j == 3) << endl;
+cout << (i <= 1 && j < 4) << endl;
+cout << (m <= 99 && k < m) << endl;
+cout << (j >= i || k == m) << endl;
+cout << (k + m < j || 3 - j >= k) << endl;
+cout << !m << endl;
+cout << !(j - m) << endl;
+cout << (!(k > m)) << endl;
+
+
+			//5.19 число "пі"
+
+double pi = 4;
+cout << setw(10) << "pi\t" << "Membership number:\n";
+	for (int k = 1, i = 3; i <= 400000; k ++, i += 2)
+	{
+		switch (k % 2)
+		{
+		case 0:
+			pi += 4.0 / i;
+			break;
+		case 1:
+			pi -= 4.0 / i;
+			break;
+		}
+		int temp = pi * 100000;
+		switch (temp)
+		{
+			case 314000:
+			cout << "pi = " << pi << " for k = " << k << "\n";
+			break;
+		case 314100:
+			cout << "pi = " << pi << " for k = " << k << "\n";
+			break;
+		case 314150:
+			cout << "pi = " << pi << " for k = " << k << "\n";
+			break;
+		case 314159:
+			cout << "pi = " << pi << " for k = " << k << "\n";
+			break;
+		}
+cout << setw(10) << pi << "\t" << i << "\n";
+}
+
+			//5.20 Піфагорові трійки
+
+int a, b, c;
+for (c = 1; c <= 500; c++)
+{
+	for (b = 1; b <= c; b++)
+	{
+		for (a = 1; a <= b; a++)
+		{
+			if (a * a + b * b == c * c)
+			{
+				cout << a << ", " << b << ", " << c << ";\n";
+			}
+		}
+	}
+}
+
+			//5.21 Розрахунок щотижневої оплати співробітникам різного типу
+int type;
+double wSalary;
+double hSalary;
+int time;
+double price, number;
+double salary;
+
+
+cout << "Enter the type of employee: 1 - manager; 2 - hourly worker; 3 - commission starts employee; 4 - deal employee;\nOr enter -1 for ended:" << endl;
+cin >> type;
+
+while (type != -1)
+{
+	switch (type)
+		{
+		case 1:
+			cout << "Please enter the weekly salary: \n";
+			std::cin >> wSalary;
+			salary = wSalary;
+			break;
+		case 2:
+			cout << "Please enter the hourly salary and number of hours: \n";
+			std::cin >> hSalary >> time;
+			if (time <= 40)
+			{
+				salary = time * hSalary;
+			}
+			else {
+				salary = hSalary * (3 * time / 2 - 20);
+			};
+			break;
+		case 3:
+			cout << "Please enter the weekly salary: \n";
+			std::cin >> wSalary;
+			salary = 250 + 0.057 * wSalary;
+			break;
+		case 4:
+			cout << "Please enter the price per unit and number of units: \n";
+			std::cin >> price >> number;
+			salary = price * number;
+			break;
+	default:
+			cout << "You have entered incorrect data. Please try enter the type again.\n";
+			break;
+		}
+if (type <= 4)
+{
+	if (type > 0)
+	{
+		cout << "\nThe weekly salary for the employee is  " << salary << "$\n\n";
+	}
+}
+cout << "Enter the type of employee: 1 - manager; 2 - hourly worker; 3 - commission starts employee; 4 - deal employee;\nOr enter EOF for ended:" << endl;
+cin >> type;
+}
+
+			//5.22 Закони де Моргана
+	//a)
+int x;
+int y;
+x = 6;
+y = 8;
+
+if (!(x < 5) && !(y >= 7))
+{
+	cout << "hello\n";
+}
+else {
+	cout << "bye-bye\n";
+	}
+if (!( (x < 5) || (y >= 7)))
+{
+	cout << "hello\n";
+}
+else {
+	cout << "bye-bye\n";
+}
+
+	//b)
+int a, b;
+int g;
+a = 6;
+b = 6;
+g = 7;
+
+if (!(a == b) || !(g != 5))
+{
+	cout << "hello\n";
+}
+else {
+	cout << "bye-bye\n";
+}
+if (!((a == b) && (g != 5)))
+{
+	cout << "hello\n";
+}
+else {
+	cout << "bye-bye\n";
+	}
+	//c)
+int x;
+int y;
+x = 6;
+y = 3;
+
+if (!(x <= 8) || !(y > 4))
+{
+	cout << "hello\n";
+}
+else {
+	cout << "bye-bye\n";
+}
+if (!((x <= 8) && (y > 4)))
+{
+	cout << "hello\n";
+}
+else {
+	cout << "bye-bye\n";
+}
+	//d)
+int i;
+int j;
+i = 5;
+j = 3;
+
+if (!(i > 4) && !(j <= 6))
+{
+	cout << "hello\n";
+}
+else {
+	cout << "bye-bye\n";
+}
+if (!((i > 4) || (j <= 6)))
+{
+	cout << "hello\n";
+}
+else {
+	cout << "bye-bye\n";
+}
+*/
+			//5.23 Виведення фігури - ромб
+	for (int i = 1; i <= 5; i++)
+	{
+		for (int j = 1; (j < 6 - i); j++)
+		{
+			cout << " ";
+		}
+		for (int j = 5; (j >= 6 - i); j--)
+		{
+			cout << "*";
+		}
+
+		cout << "\n";
+		}
+	
 
 system("pause");
 	return 0;
