@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include<limits>
+#include <math.h>
 
 using namespace std;
 
@@ -1161,7 +1162,7 @@ if (!((i > 4) || (j <= 6)))
 else {
 	cout << "bye-bye\n";
 }
-*/
+
 			//5.23 Виведення фігури - ромб
 	for (int i = 1; i <= 5; i++)
 	{
@@ -1173,10 +1174,75 @@ else {
 		{
 			cout << "*";
 		}
-
+		for (int j = 4; (j >= 6 - i); j--)
+		{
+			cout << "*";
+		}
+		for (int j = 1; (j < 6 - i); j++)
+		{
+			cout << " ";
+		}
 		cout << "\n";
 		}
+	for (int i = 1; i <= 4; i++)
+	{
+		for (int j = 4; (j >= 5 - i); j--)
+		{
+			cout << " ";
+		}
+		for (int j = 1; (j <= 5 - i); j++)
+		{
+			cout << "*";
+		}
+		for (int j = 2; (j <= 5 - i); j++)
+		{
+			cout << "*";
+		}
+		for (int j = 4; (j >= 5 - i); j--)
+		{
+			cout << " ";
+		}
+		cout << "\n";
+	}
+
+			//5.24 Виведення фігури - ромб
+	int n;
+	cout << "Enter the odd number from 1 to 19\n";
+	cin >> n;
+	if ((n % 2 == 1) && (n <= 19) && (n >= 1))
+	{
 	
+		for (int j = 1; j <= n; j++)
+		{
+			for (int k = n / 2; k >= -n / 2; k--)
+			{
+				if ((j <= abs(k)) || (j > n - abs(k)))
+				{
+					cout << " ";
+				}
+				else {
+					cout << "*";
+				}
+			}cout << "\n";
+		}
+	}
+	else {
+		cout << "Incorrectly entered number\n";
+	}
+
+			//5.26 перевірка теорії
+for (int i = 1; i <= 5; i++)
+{
+	for (int j = 1; j <= 3; j++) 
+	{
+		for (int k = 1; k <= 4; k++)
+		{
+		cout << '*';
+		}
+	cout << endl;
+	} cout << endl;
+} 
+*/
 
 system("pause");
 	return 0;
